@@ -15,7 +15,8 @@ struct ContentView: View {
                 Image(systemName: "flame.fill")
                     .resizable()
                     .gradientForeground(colors: [.pink, .orange])
-                    .frame(width: 70, height: 80)
+                    .font(.largeTitle)
+                    .frame(width: 170, height: 200)
                 ZStack {
                     SignUp(index: self.$index)
                         .zIndex(Double(self.index))
@@ -23,18 +24,19 @@ struct ContentView: View {
                 }
                 HStack(spacing: 15) {
                     Rectangle()
-                        .fill(Color.black)
+                        .fill(Color.white)
                         .frame(height: 1)
                     Text("OR")
+                        .foregroundColor(.white)
                     Rectangle()
-                        .fill(Color.black)
+                        .fill(Color.white)
                         .frame(height: 1)
                 }
                 .padding(.horizontal,30)
                 .padding(.top,50)
                 HStack(spacing: 25) {
                     Button(action: {} ) {
-                        Image(systemName: "bolt.horizontal.circle")
+                        Image(systemName: "folder.circle.fill")
                             
                             .resizable()
 
@@ -42,13 +44,13 @@ struct ContentView: View {
                             .frame(width: 50, height: 50)
                     }
                     Button(action: {} ) {
-                        Image(systemName: "wave.3.backward.circle")
+                        Image(systemName: "bolt.horizontal.circle.fill")
                             .resizable()
                             .foregroundColor(.white)
                             .frame(width: 50, height: 50)
                     }
                     Button(action: {} ) {
-                        Image(systemName: "network")
+                        Image(systemName: "pencil.circle.fill")
                             .resizable()
                             .foregroundColor(.white)
                             .frame(width: 50, height: 50)
@@ -153,17 +155,26 @@ struct Login: View {
                 self.index = 0
             }
             .cornerRadius(35)
-            .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
+            .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: -5)
             .padding(.horizontal, 20)
             Button(action: {}) {
-                Text("LOGIN")
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .padding(.vertical)
-                    .padding(.horizontal, 50)
-                    .background(Color.green)
-                    .clipShape(Capsule())
-                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                ZStack {
+                    Text("LOGIN")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .padding(.vertical)
+                        .padding(.horizontal, 50)
+                        .background(Color.white.opacity(0.9).blur(radius: 1))
+                        .gradientForeground(colors: [.pink, .orange])
+                        //.blur(radius: 3)
+                        .clipShape(Capsule())
+                        
+                        .shadow(color: Color.white.opacity(0), radius: 5, x: 0, y: 0)
+                        
+                    Text("LOGIN")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                }
                 
             }
             .offset(y: 35)
@@ -241,14 +252,23 @@ struct SignUp: View {
             .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
             .padding(.horizontal, 20)
             Button(action: {}) {
-                Text("SIGNUP")
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .padding(.vertical)
-                    .padding(.horizontal, 50)
-                    .background(Color.green)
-                    .clipShape(Capsule())
-                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                ZStack {
+                    Text("SIGNUP")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .padding(.vertical)
+                        .padding(.horizontal, 50)
+                        .background(Color.white.opacity(0.9).blur(radius: 1))
+                        .gradientForeground(colors: [.blue, .purple])
+                        //.blur(radius: 3)
+                        .clipShape(Capsule())
+                        
+                        .shadow(color: Color.white.opacity(0), radius: 5, x: 0, y: 0)
+                        
+                    Text("SIGNUP")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                }
                 
             }
             .offset(y: 35)
