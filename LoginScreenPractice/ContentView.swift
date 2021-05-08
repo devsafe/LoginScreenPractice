@@ -74,6 +74,20 @@ struct CShape1: Shape {
             path.addLine(to: CGPoint(x: rect.width, y: rect.height))
             path.addLine(to: CGPoint(x: 0, y: rect.height))
             path.addLine(to: CGPoint(x: 0, y: 0))
+            //path.addLine(to: CGPoint(x: 100, y: 0))
+        }
+    }
+}
+
+
+struct CShape1clone: Shape {
+    func path(in rect: CGRect) -> Path {
+        return Path {
+            path in
+            path.move(to: CGPoint(x: rect.width, y: 100))
+            path.addLine(to: CGPoint(x: rect.width, y: rect.height))
+            path.addLine(to: CGPoint(x: 0, y: rect.height))
+            path.addLine(to: CGPoint(x: 0, y: 0))
         }
     }
 }
@@ -89,6 +103,9 @@ struct CShape2: Shape {
         }
     }
 }
+
+
+
 
 
 struct Login: View {
